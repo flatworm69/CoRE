@@ -1,0 +1,19 @@
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#a855f7" />
+      <stop offset="50%" stop-color="#f97316" />
+      <stop offset="100%" stop-color="#22d3ee" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" rx="42" fill="url(#grad)"/>
+  <g transform="translate(120,120)">
+    <path d="M180 220c-40-24-60-64-48-104 20-68 110-94 160-42 48-52 140-26 160 42 12 40-8 80-48 104 32 8 56 36 56 72 0 58-56 94-136 94-80 0-136-36-136-94 0-36 24-64 56-72z" fill="#fff9ff" opacity="0.95"/>
+    <path d="M210 140c24-32 72-32 96 0" stroke="#f472b6" stroke-width="14" stroke-linecap="round"/>
+    <circle cx="256" cy="208" r="18" fill="#2f243a"/>
+    <circle cx="352" cy="208" r="18" fill="#2f243a"/>
+    <path d="M268 272c22 18 54 18 76 0" stroke="#f97316" stroke-width="14" stroke-linecap="round"/>
+    <path d="M310 60l-28 36 44 12-12 44 36-28 36 28-12-44 44-12-28-36 12-44-36 28-36-28 12 44z" fill="#fff" opacity="0.9"/>
+  </g>
+  <text x="50%" y="540" text-anchor="middle" font-family="'Raleway', sans-serif" font-weight="700" font-size="44" fill="#fff">Feisty Unicorn Coffee House</text>
+</svg>
