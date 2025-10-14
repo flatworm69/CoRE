@@ -1,0 +1,114 @@
+<section id="supply" class="supply" data-section-id="dropship-partners" data-section-type="dropship-partners">
+  <div class="container">
+    <div class="supply__intro">
+      <p class="supply__eyebrow">{{ section.settings.eyebrow }}</p>
+      <h2 class="section-title">{{ section.settings.heading }}</h2>
+      <p class="supply__copy">{{ section.settings.copy }}</p>
+      {% if section.settings.cta_label != blank and section.settings.cta_link != blank %}
+        <a class="button button--primary" href="{{ section.settings.cta_link }}">{{ section.settings.cta_label }}</a>
+      {% endif %}
+    </div>
+    <div class="supply__grid">
+      {% for block in section.blocks %}
+        <article class="supply__card" {{ block.shopify_attributes }}>
+          <header class="supply__card-header">
+            <h3>{{ block.settings.title }}</h3>
+            {% if block.settings.badge != blank %}
+              <p class="supply__badge">{{ block.settings.badge }}</p>
+            {% endif %}
+          </header>
+          <p class="supply__summary">{{ block.settings.summary }}</p>
+          <ul class="supply__list">
+            {% if block.settings.highlight_one != blank %}
+              <li>{{ block.settings.highlight_one }}</li>
+            {% endif %}
+            {% if block.settings.highlight_two != blank %}
+              <li>{{ block.settings.highlight_two }}</li>
+            {% endif %}
+            {% if block.settings.highlight_three != blank %}
+              <li>{{ block.settings.highlight_three }}</li>
+            {% endif %}
+          </ul>
+          {% if block.settings.footer != blank %}
+            <p class="supply__footer">{{ block.settings.footer }}</p>
+          {% endif %}
+        </article>
+      {% else %}
+        <article class="supply__card">
+          <h3>Plan your supply chain</h3>
+          <p>Add blocks for Temecula Coffee Roasters, Dripshipper, and other partners to help staff choose the right path.</p>
+        </article>
+      {% endfor %}
+    </div>
+    {% if section.settings.disclaimer != blank %}
+      <div class="supply__disclaimer">{{ section.settings.disclaimer }}</div>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Dropship partners",
+  "settings": [
+    {"type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Private-Label Ready"},
+    {"type": "text", "id": "heading", "label": "Heading", "default": "Dropship + Label Partners We Trust"},
+    {"type": "textarea", "id": "copy", "label": "Intro copy", "default": "We vetted suppliers so you can scale from online dropshipping to a future café + escape room with confidence."},
+    {"type": "text", "id": "cta_label", "label": "CTA label", "default": "Download the label guide"},
+    {"type": "url", "id": "cta_link", "label": "CTA link", "default": "/files/temecula_labeling_guide.pdf"},
+    {"type": "richtext", "id": "disclaimer", "label": "Footer disclaimer", "default": "<p><strong>Compliance tip:</strong> When dropshipping through Temecula Coffee Roasters, list them as the roaster and Feisty Unicorn Coffee House as the distributor with your registered business address.</p>"}
+  ],
+  "blocks": [
+    {
+      "type": "partner",
+      "name": "Partner",
+      "settings": [
+        {"type": "text", "id": "title", "label": "Title", "default": "Temecula Coffee Roasters"},
+        {"type": "text", "id": "badge", "label": "Badge", "default": "Best for launch"},
+        {"type": "textarea", "id": "summary", "label": "Summary", "default": "No membership fees, low minimums, and white-label support that matches our punk branding goals."},
+        {"type": "text", "id": "highlight_one", "label": "Highlight 1", "default": "Private-label roasting with custom artwork placement"},
+        {"type": "text", "id": "highlight_two", "label": "Highlight 2", "default": "Ships from California in 3–5 business days"},
+        {"type": "text", "id": "highlight_three", "label": "Highlight 3", "default": "Offers label templates + compliance checklist"},
+        {"type": "textarea", "id": "footer", "label": "Footer note", "default": "Ideal when we want full control of blends plus drop-in merch photography."}
+      ]
+    },
+    {
+      "type": "partner",
+      "name": "Partner",
+      "settings": [
+        {"type": "text", "id": "title", "label": "Title", "default": "Dripshipper"},
+        {"type": "text", "id": "badge", "label": "Badge", "default": "Automation friendly"},
+        {"type": "textarea", "id": "summary", "label": "Summary", "default": "Shopify app with auto-fulfillment, ideal once we scale traffic and want a hands-off inventory flow."},
+        {"type": "text", "id": "highlight_one", "label": "Highlight 1", "default": "Subscription-based with real-time order routing"},
+        {"type": "text", "id": "highlight_two", "label": "Highlight 2", "default": "US-roasted beans roasted to order"},
+        {"type": "text", "id": "highlight_three", "label": "Highlight 3", "default": "Pairs well with Klaviyo + Recharge automations"},
+        {"type": "textarea", "id": "footer", "label": "Footer note", "default": "Use after validating best-sellers—membership fees can be offset by bundling merch + beans."}
+      ]
+    },
+    {
+      "type": "partner",
+      "name": "Partner",
+      "settings": [
+        {"type": "text", "id": "title", "label": "Title", "default": "Aroma Ridge"},
+        {"type": "text", "id": "badge", "label": "Badge", "default": "Flavor lab"},
+        {"type": "textarea", "id": "summary", "label": "Summary", "default": "Custom flavor development and small-batch flavored coffees to extend our seasonal calendar."},
+        {"type": "text", "id": "highlight_one", "label": "Highlight 1", "default": "One-time $100 onboarding"},
+        {"type": "text", "id": "highlight_two", "label": "Highlight 2", "default": "Great for limited runs + collabs"},
+        {"type": "text", "id": "highlight_three", "label": "Highlight 3", "default": "Bulk + dropship options for flexibility"},
+        {"type": "textarea", "id": "footer", "label": "Footer note", "default": "Use for flavored coffee subscription drops and escape-room tie-ins."}
+      ]
+    }
+  ],
+  "max_blocks": 6,
+  "presets": [
+    {
+      "name": "Dropship partners",
+      "category": "Text",
+      "blocks": [
+        {"type": "partner"},
+        {"type": "partner"},
+        {"type": "partner"}
+      ]
+    }
+  ]
+}
+{% endschema %}

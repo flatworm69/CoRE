@@ -1,0 +1,44 @@
+<header class="site-header">
+  <div class="container">
+    <div class="brand">
+      <a href="/" class="brand__link">
+        <span class="brand__icon" aria-hidden="true">{{ section.settings.emoji }}</span>
+        <span class="brand__text">
+          <span class="brand__name">{{ section.settings.store_name }}</span>
+          {% if section.settings.tagline != blank %}
+            <span class="brand__tagline">{{ section.settings.tagline }}</span>
+          {% endif %}
+        </span>
+      </a>
+      {% if section.settings.menu != blank %}
+        <button class="nav-toggle" aria-expanded="false" aria-controls="SiteNav">
+          <span class="nav-toggle__bar"></span>
+          <span class="nav-toggle__bar"></span>
+          <span class="nav-toggle__bar"></span>
+          <span class="visually-hidden">Toggle navigation</span>
+        </button>
+      {% endif %}
+    </div>
+    {% if section.settings.menu != blank %}
+      <nav id="SiteNav" class="site-nav" role="navigation">
+        <ul>
+          {% for link in section.settings.menu.links %}
+            <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+          {% endfor %}
+        </ul>
+      </nav>
+    {% endif %}
+  </div>
+</header>
+
+{% schema %}
+{
+  "name": "Header",
+  "settings": [
+    {"type": "text", "id": "store_name", "label": "Store name", "default": "Feisty Unicorn Coffee House"},
+    {"type": "text", "id": "tagline", "label": "Tagline", "default": "Caffeine + Chaos + Charm"},
+    {"type": "text", "id": "emoji", "label": "Logo emoji", "default": "🦄"},
+    {"type": "link_list", "id": "menu", "label": "Menu", "default": "main-menu"}
+  ]
+}
+{% endschema %}

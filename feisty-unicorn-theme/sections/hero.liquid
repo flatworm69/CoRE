@@ -1,0 +1,60 @@
+<section id="hero" class="hero" data-section-id="hero" data-section-type="hero">
+  <div class="container hero__content">
+    <div class="hero__copy">
+      <p class="hero__eyebrow">{{ section.settings.eyebrow }}</p>
+      <h1 class="hero__title">{{ section.settings.title }}</h1>
+      <p class="hero__subtitle">{{ section.settings.subtitle }}</p>
+      {% if section.settings.acronym != blank %}
+        <div class="hero__acronym">{{ section.settings.acronym }}</div>
+      {% endif %}
+      <div class="hero__actions">
+        <a class="button button--primary" href="{{ section.settings.primary_link }}">{{ section.settings.primary_label }}</a>
+        <a class="button button--ghost" href="{{ section.settings.secondary_link }}">{{ section.settings.secondary_label }}</a>
+      </div>
+    </div>
+    <div class="hero__media">
+      <div class="hero__feature">
+        <div class="hero__badge">{{ section.settings.badge }}</div>
+        <p class="hero__blurb">{{ section.settings.blurb }}</p>
+      </div>
+      {% if section.settings.feature_image != blank %}
+        <figure class="hero__art">
+          <img
+            src="{{ section.settings.feature_image | img_url: '900x' }}"
+            srcset="{{ section.settings.feature_image | img_url: '600x' }} 600w, {{ section.settings.feature_image | img_url: '900x' }} 900w, {{ section.settings.feature_image | img_url: '1200x' }} 1200w"
+            sizes="(min-width: 900px) 420px, 100vw"
+            alt="{{ section.settings.feature_image_alt | escape }}"
+            loading="lazy"
+          >
+          {% if section.settings.feature_image_caption != blank %}
+            <figcaption class="hero__art-caption">{{ section.settings.feature_image_caption }}</figcaption>
+          {% endif %}
+        </figure>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Hero",
+  "settings": [
+    {"type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Caffeine + Chaos + Charm"},
+    {"type": "text", "id": "title", "label": "Title", "default": "Wake the FUCH Up!"},
+    {"type": "textarea", "id": "subtitle", "label": "Subtitle", "default": "Feisty Unicorn Coffee House is your punky nerdcore café-meets-escape-room, brewing small-batch drops that taste as bold as our mascot."},
+    {"type": "richtext", "id": "acronym", "label": "Acronym blurb", "default": "<p><strong>F.U.C.H.</strong> = Fierce Flavor, Unapologetic Attitude, Caffeinated Creativity, House of Mischief.</p>"},
+    {"type": "text", "id": "primary_label", "label": "Primary button label", "default": "Shop Wake the FUCH Up!"},
+    {"type": "url", "id": "primary_link", "label": "Primary button link", "default": "#roasts"},
+    {"type": "text", "id": "secondary_label", "label": "Secondary button label", "default": "Play the Mascot Game"},
+    {"type": "url", "id": "secondary_link", "label": "Secondary button link", "default": "#fuch-arcade"},
+    {"type": "text", "id": "badge", "label": "Badge text", "default": "Signature Spell: Get FUCH'd"},
+    {"type": "textarea", "id": "blurb", "label": "Feature blurb", "default": "Small-lot beans roasted by trusted partners, layered with house-made syrups like Stardust Lavender, Cosmic Caramel, and Pixel Mint."},
+    {"type": "image_picker", "id": "feature_image", "label": "Hero artwork"},
+    {"type": "text", "id": "feature_image_alt", "label": "Hero artwork alt text", "default": "Illustrated Feisty Unicorn mascot raising a neon latte."},
+    {"type": "text", "id": "feature_image_caption", "label": "Hero artwork caption", "default": "Artwork: Feisty Unicorn Coffee House Punk Mascot"}
+  ],
+  "presets": [
+    {"name": "Hero"}
+  ]
+}
+{% endschema %}

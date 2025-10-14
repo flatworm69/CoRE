@@ -1,0 +1,71 @@
+<section class="events" data-section-id="events" data-section-type="events">
+  <div class="container">
+    <h2 class="section-title">{{ section.settings.heading }}</h2>
+    <div class="events__list">
+      {% if section.blocks.size > 0 %}
+        {% for block in section.blocks %}
+          <article class="event" {{ block.shopify_attributes }}>
+            <p class="event__date">{{ block.settings.date }}</p>
+            <h3 class="event__title">{{ block.settings.title }}</h3>
+            <p class="event__description">{{ block.settings.description }}</p>
+          </article>
+        {% endfor %}
+      {% else %}
+        <p>No events have been added yet. Use the theme editor to showcase your community happenings.</p>
+      {% endif %}
+    </div>
+    {% if section.settings.button_label != blank %}
+      <a class="button button--primary" href="{{ section.settings.button_link }}">{{ section.settings.button_label }}</a>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Events",
+  "settings": [
+    {"type": "text", "id": "heading", "label": "Heading", "default": "Forthcoming Chaos"},
+    {"type": "text", "id": "button_label", "label": "Button label", "default": "See all happenings"},
+    {"type": "url", "id": "button_link", "label": "Button link", "default": "/pages/fuch-events"}
+  ],
+  "blocks": [
+    {
+      "type": "event",
+      "name": "Event",
+      "settings": [
+        {"type": "text", "id": "date", "label": "Date", "default": "First Fridays"},
+        {"type": "text", "id": "title", "label": "Title", "default": "Wake the FUCH Up! Roast Drops"},
+        {"type": "textarea", "id": "description", "label": "Description", "default": "New single-origin release, live DJ mashups, and tasting flights paired with limited merch."}
+      ]
+    },
+    {
+      "type": "event",
+      "name": "Event",
+      "settings": [
+        {"type": "text", "id": "date", "label": "Date", "default": "Second Saturdays"},
+        {"type": "text", "id": "title", "label": "Title", "default": "FUCH Arcade Beta Night"},
+        {"type": "textarea", "id": "description", "label": "Description", "default": "Playtest the 8-bit mascot game IRL, snag achievement pins, and sip Pixel Mint Nitro on tap."}
+      ]
+    },
+    {
+      "type": "event",
+      "name": "Event",
+      "settings": [
+        {"type": "text", "id": "date", "label": "Date", "default": "Quarterly"},
+        {"type": "text", "id": "title", "label": "Title", "default": "Escape Room Sneak Peek"},
+        {"type": "textarea", "id": "description", "label": "Description", "default": "Solve micro-puzzles hidden around the café to unlock discounts and future reservations."}
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Events",
+      "blocks": [
+        {"type": "event"},
+        {"type": "event"},
+        {"type": "event"}
+      ]
+    }
+  ]
+}
+{% endschema %}

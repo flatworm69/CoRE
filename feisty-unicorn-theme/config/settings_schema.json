@@ -1,0 +1,25 @@
+[
+  {
+    "name": "Theme settings",
+    "settings": [
+      {
+        "type": "color",
+        "id": "primary_color",
+        "label": "Primary color",
+        "default": "#a855f7"
+      },
+      {
+        "type": "color",
+        "id": "accent_color",
+        "label": "Accent color",
+        "default": "#f97316"
+      },
+      {
+        "type": "richtext",
+        "id": "announcement_text",
+        "label": "Announcement bar text",
+        "default": "<p>✨ New seasonal blend: Ember & Aurora now brewing! ✨</p>"
+      }
+    ]
+  }
+]

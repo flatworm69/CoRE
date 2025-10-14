@@ -1,0 +1,92 @@
+<section id="identity" class="pillars" data-section-id="brand-pillars" data-section-type="brand-pillars">
+  <div class="container">
+    <div class="pillars__intro">
+      <p class="pillars__eyebrow">{{ section.settings.eyebrow }}</p>
+      <h2 class="section-title">{{ section.settings.heading }}</h2>
+      <p class="pillars__copy">{{ section.settings.copy }}</p>
+    </div>
+    <div class="pillars__grid">
+      {% for block in section.blocks %}
+        <article class="pillars__card" {{ block.shopify_attributes }}>
+          <div class="pillars__icon" aria-hidden="true">{{ block.settings.icon }}</div>
+          <h3>{{ block.settings.title }}</h3>
+          <p class="pillars__tagline">{{ block.settings.tagline }}</p>
+          <p>{{ block.settings.description }}</p>
+        </article>
+      {% else %}
+        <article class="pillars__card">
+          <div class="pillars__icon" aria-hidden="true">🦄</div>
+          <h3>Tell your story</h3>
+          <p class="pillars__tagline">Add brand pillars to share what Feisty Unicorn Coffee House stands for.</p>
+          <p>Use the theme editor to add blocks with icons, titles, and descriptions.</p>
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Brand pillars",
+  "settings": [
+    {"type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Caffeine + Chaos + Charm"},
+    {"type": "text", "id": "heading", "label": "Heading", "default": "The Feisty Unicorn Ethos"},
+    {"type": "textarea", "id": "copy", "label": "Intro copy", "default": "We blend nerdcore aesthetics with specialty coffee science, channeling the Feisty Unicorn mascot across every roast, label, and community activation."}
+  ],
+  "blocks": [
+    {
+      "type": "pillar",
+      "name": "Pillar",
+      "settings": [
+        {"type": "text", "id": "icon", "label": "Emoji/icon", "default": "⚡"},
+        {"type": "text", "id": "title", "label": "Title", "default": "Fierce Flavor"},
+        {"type": "text", "id": "tagline", "label": "Tagline", "default": "Wake the FUCH Up! dark roast anchors the lineup."},
+        {"type": "textarea", "id": "description", "label": "Description", "default": "Bold yet balanced blends roasted through Temecula Coffee Roasters keep our dropship operations nimble without sacrificing quality."}
+      ]
+    },
+    {
+      "type": "pillar",
+      "name": "Pillar",
+      "settings": [
+        {"type": "text", "id": "icon", "label": "Emoji/icon", "default": "🌀"},
+        {"type": "text", "id": "title", "label": "Title", "default": "Unicorn Attitude"},
+        {"type": "text", "id": "tagline", "label": "Tagline", "default": "Get FUCH'd merch, punk mascots, and neon visuals."},
+        {"type": "textarea", "id": "description", "label": "Description", "default": "Every touchpoint is designed to feel like a rebellious arcade café—playful humor, inclusive vibes, and just the right amount of mischief."}
+      ]
+    },
+    {
+      "type": "pillar",
+      "name": "Pillar",
+      "settings": [
+        {"type": "text", "id": "icon", "label": "Emoji/icon", "default": "🎮"},
+        {"type": "text", "id": "title", "label": "Title", "default": "Caffeinated Creativity"},
+        {"type": "text", "id": "tagline", "label": "Tagline", "default": "Arcade nights, latte art battles, escape room teasers."},
+        {"type": "textarea", "id": "description", "label": "Description", "default": "From 8-bit mini games to immersive storytelling, we give fans reasons to keep returning—online and IRL."}
+      ]
+    },
+    {
+      "type": "pillar",
+      "name": "Pillar",
+      "settings": [
+        {"type": "text", "id": "icon", "label": "Emoji/icon", "default": "🤝"},
+        {"type": "text", "id": "title", "label": "Title", "default": "House of Mischief"},
+        {"type": "text", "id": "tagline", "label": "Tagline", "default": "Community-first, women-led, unapologetically bold."},
+        {"type": "textarea", "id": "description", "label": "Description", "default": "Pop-up collabs, inclusive hiring, and transparent sourcing keep our universe grounded in real relationships."}
+      ]
+    }
+  ],
+  "max_blocks": 6,
+  "presets": [
+    {
+      "name": "Brand pillars",
+      "category": "Text",
+      "blocks": [
+        {"type": "pillar"},
+        {"type": "pillar"},
+        {"type": "pillar"},
+        {"type": "pillar"}
+      ]
+    }
+  ]
+}
+{% endschema %}

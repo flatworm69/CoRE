@@ -1,0 +1,139 @@
+<section id="roasts" class="showcase" data-section-id="product-showcase" data-section-type="product-showcase">
+  <div class="container">
+    <div class="showcase__intro">
+      <p class="showcase__eyebrow">{{ section.settings.eyebrow }}</p>
+      <h2 class="section-title">{{ section.settings.heading }}</h2>
+      <p class="showcase__copy">{{ section.settings.copy }}</p>
+    </div>
+    <div class="showcase__grid">
+      {% for block in section.blocks %}
+        <article class="showcase__item" {{ block.shopify_attributes }}>
+          {% if block.settings.image != blank %}
+            <div class="showcase__media">
+              <img
+                src="{{ block.settings.image | img_url: '600x' }}"
+                srcset="{{ block.settings.image | img_url: '400x' }} 400w, {{ block.settings.image | img_url: '600x' }} 600w, {{ block.settings.image | img_url: '800x' }} 800w"
+                sizes="(min-width: 900px) 240px, 100vw"
+                alt="{{ block.settings.image_alt | escape }}"
+                loading="lazy"
+              >
+            </div>
+          {% endif %}
+          <div class="showcase__content">
+            {% if block.settings.tag != blank %}
+              <p class="showcase__tag">{{ block.settings.tag }}</p>
+            {% endif %}
+            <h3>{{ block.settings.title }}</h3>
+            <p class="showcase__notes">{{ block.settings.notes }}</p>
+            <ul class="showcase__meta">
+              {% if block.settings.roast != blank %}
+                <li><strong>Roast:</strong> {{ block.settings.roast }}</li>
+              {% endif %}
+              {% if block.settings.origin != blank %}
+                <li><strong>Origin:</strong> {{ block.settings.origin }}</li>
+              {% endif %}
+              {% if block.settings.tasting != blank %}
+                <li><strong>Tasting:</strong> {{ block.settings.tasting }}</li>
+              {% endif %}
+            </ul>
+            {% if block.settings.cta_label != blank and block.settings.cta_link != blank %}
+              <a class="button button--ghost" href="{{ block.settings.cta_link }}">{{ block.settings.cta_label }}</a>
+            {% endif %}
+          </div>
+        </article>
+      {% else %}
+        <p class="showcase__empty">Add product highlight blocks to feature roasts, seasonal drinks, or merch capsules.</p>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Product showcase",
+  "settings": [
+    {"type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Signature Drops"},
+    {"type": "text", "id": "heading", "label": "Heading", "default": "Wake the FUCH Up! Collection"},
+    {"type": "textarea", "id": "copy", "label": "Intro copy", "default": "Launch-ready artwork pairs with private-label roasts so you can start selling in Shopify immediately."}
+  ],
+  "blocks": [
+    {
+      "type": "feature",
+      "name": "Feature",
+      "settings": [
+        {"type": "image_picker", "id": "image", "label": "Artwork"},
+        {"type": "text", "id": "image_alt", "label": "Artwork alt text", "default": "Wake the FUCH Up! dark roast label art featuring the punk unicorn."},
+        {"type": "text", "id": "tag", "label": "Tag", "default": "Flagship Roast"},
+        {"type": "text", "id": "title", "label": "Title", "default": "Wake the FUCH Up! – Dark Roast"},
+        {"type": "textarea", "id": "notes", "label": "Short description", "default": "An unapologetic dark roast with dark chocolate, burnt sugar, and midnight cherry energy."},
+        {"type": "text", "id": "roast", "label": "Roast level", "default": "Dark"},
+        {"type": "text", "id": "origin", "label": "Origin", "default": "Guatemala + Sumatra"},
+        {"type": "text", "id": "tasting", "label": "Tasting notes", "default": "Fudge brownie, molasses, smoky cola"},
+        {"type": "text", "id": "cta_label", "label": "CTA label", "default": "Shop the roast"},
+        {"type": "url", "id": "cta_link", "label": "CTA link", "default": "/products/wake-the-fuch-up"}
+      ]
+    },
+    {
+      "type": "feature",
+      "name": "Feature",
+      "settings": [
+        {"type": "image_picker", "id": "image", "label": "Artwork"},
+        {"type": "text", "id": "image_alt", "label": "Artwork alt text", "default": "Iridescent iced matcha in neon glassware with lightning bolt straw."},
+        {"type": "text", "id": "tag", "label": "Tag", "default": "Seasonal"},
+        {"type": "text", "id": "title", "label": "Title", "default": "Moonbeam Matcha"},
+        {"type": "textarea", "id": "notes", "label": "Short description", "default": "Ceremonial-grade matcha, pandan coconut cream, and galaxy glitter—our cult-favorite green sip."},
+        {"type": "text", "id": "roast", "label": "Roast level", "default": "Light"},
+        {"type": "text", "id": "origin", "label": "Origin", "default": "Uji, Japan"},
+        {"type": "text", "id": "tasting", "label": "Tasting notes", "default": "Pandan, toasted rice, vanilla bean"},
+        {"type": "text", "id": "cta_label", "label": "CTA label", "default": "Order the syrup kit"},
+        {"type": "url", "id": "cta_link", "label": "CTA link", "default": "/products/moonbeam-matcha-kit"}
+      ]
+    },
+    {
+      "type": "feature",
+      "name": "Feature",
+      "settings": [
+        {"type": "image_picker", "id": "image", "label": "Artwork"},
+        {"type": "text", "id": "image_alt", "label": "Artwork alt text", "default": "Chai latte illustration with feisty unicorn graffiti."},
+        {"type": "text", "id": "tag", "label": "Tag", "default": "Drop Exclusive"},
+        {"type": "text", "id": "title", "label": "Title", "default": "Chaos Chai"},
+        {"type": "textarea", "id": "notes", "label": "Short description", "default": "Temecula-roasted espresso, house masala concentrate, and smoked orange peel."},
+        {"type": "text", "id": "roast", "label": "Roast level", "default": "Medium"},
+        {"type": "text", "id": "origin", "label": "Origin", "default": "Temecula Coffee Roasters"},
+        {"type": "text", "id": "tasting", "label": "Tasting notes", "default": "Cardamom, candied ginger, torched citrus"},
+        {"type": "text", "id": "cta_label", "label": "CTA label", "default": "Preorder"},
+        {"type": "url", "id": "cta_link", "label": "CTA link", "default": "/products/chaos-chai"}
+      ]
+    },
+    {
+      "type": "feature",
+      "name": "Feature",
+      "settings": [
+        {"type": "image_picker", "id": "image", "label": "Artwork"},
+        {"type": "text", "id": "image_alt", "label": "Artwork alt text", "default": "Cold brew can design with neon glitch unicorn."},
+        {"type": "text", "id": "tag", "label": "Tag", "default": "Ready-to-Drink"},
+        {"type": "text", "id": "title", "label": "Title", "default": "Pixel Mint Nitro"},
+        {"type": "textarea", "id": "notes", "label": "Short description", "default": "Nitro-infused mint mocha that pours like velvet and tastes like victory."},
+        {"type": "text", "id": "roast", "label": "Roast level", "default": "Medium-Dark"},
+        {"type": "text", "id": "origin", "label": "Origin", "default": "Colombia"},
+        {"type": "text", "id": "tasting", "label": "Tasting notes", "default": "Mint truffle, cacao nib, silky finish"},
+        {"type": "text", "id": "cta_label", "label": "CTA label", "default": "Join the waitlist"},
+        {"type": "url", "id": "cta_link", "label": "CTA link", "default": "/products/pixel-mint-nitro"}
+      ]
+    }
+  ],
+  "max_blocks": 8,
+  "presets": [
+    {
+      "name": "Product showcase",
+      "category": "Product",
+      "blocks": [
+        {"type": "feature"},
+        {"type": "feature"},
+        {"type": "feature"},
+        {"type": "feature"}
+      ]
+    }
+  ]
+}
+{% endschema %}

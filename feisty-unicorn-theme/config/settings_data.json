@@ -1,0 +1,28 @@
+{
+  "current": "default",
+  "presets": {
+    "default": {
+      "settings": {
+        "primary_color": "#a855f7",
+        "accent_color": "#f97316",
+        "announcement_text": "<p>🔥 Wake the FUCH Up! dark roast + Moonbeam Matcha kits ship now. 🔥</p>"
+      },
+      "sections": {
+        "header": {
+          "type": "header",
+          "settings": {}
+        },
+        "footer": {
+          "type": "footer",
+          "settings": {},
+          "blocks": {
+            "social-1": {"type": "social", "settings": {"label": "Instagram", "url": "https://instagram.com/getfuchd"}},
+            "social-2": {"type": "social", "settings": {"label": "TikTok", "url": "https://tiktok.com/@feistyunicorncoffee"}},
+            "social-3": {"type": "social", "settings": {"label": "Email Us", "url": "mailto:hello@feistyunicorn.coffee"}}
+          },
+          "block_order": ["social-1", "social-2", "social-3"]
+        }
+      }
+    }
+  }
+}

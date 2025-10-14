@@ -1,0 +1,46 @@
+<section class="testimonials" aria-label="Customer testimonials">
+  <div class="container">
+    <h2 class="section-title">{{ section.settings.heading }}</h2>
+    <div class="testimonials__slider" data-slider>
+      {% if section.blocks.size > 0 %}
+        {% for block in section.blocks %}
+          <figure class="testimonial" {{ block.shopify_attributes }}>
+            <blockquote>“{{ block.settings.quote }}”</blockquote>
+            <figcaption>— {{ block.settings.author }}</figcaption>
+          </figure>
+        {% endfor %}
+      {% else %}
+        <p>Add testimonials in the theme editor to build trust with your guests.</p>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Testimonials",
+  "settings": [
+    {"type": "text", "id": "heading", "label": "Heading", "default": "Feisty Fans Speak"}
+  ],
+  "blocks": [
+    {
+      "type": "testimonial",
+      "name": "Testimonial",
+      "settings": [
+        {"type": "textarea", "id": "quote", "label": "Quote", "default": "Wake the FUCH Up! is my new touring fuel—tastes like dark chocolate rebellion."},
+        {"type": "text", "id": "author", "label": "Author", "default": "Nova — Nerdcore Vocalist"}
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Testimonials",
+      "blocks": [
+        {"type": "testimonial"},
+        {"type": "testimonial"},
+        {"type": "testimonial"}
+      ]
+    }
+  ]
+}
+{% endschema %}

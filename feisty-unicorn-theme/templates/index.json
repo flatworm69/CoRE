@@ -1,0 +1,302 @@
+{
+  "sections": {
+    "hero": {
+      "type": "hero",
+      "settings": {
+        "feature_image_caption": "Artwork: Wake the FUCH Up! Punk Mascot"
+      }
+    },
+    "brand-pillars": {
+      "type": "brand-pillars",
+      "settings": {},
+      "blocks": {
+        "pillar-1": {
+          "type": "pillar",
+          "settings": {
+            "icon": "⚡",
+            "title": "Fierce Flavor",
+            "tagline": "Wake the FUCH Up! dark roast anchors the lineup.",
+            "description": "Bold yet balanced blends roasted through Temecula Coffee Roasters keep our dropship operations nimble without sacrificing quality."
+          }
+        },
+        "pillar-2": {
+          "type": "pillar",
+          "settings": {
+            "icon": "🌀",
+            "title": "Unicorn Attitude",
+            "tagline": "Get FUCH'd merch, punk mascots, and neon visuals.",
+            "description": "Every touchpoint is designed to feel like a rebellious arcade café—playful humor, inclusive vibes, and just the right amount of mischief."
+          }
+        },
+        "pillar-3": {
+          "type": "pillar",
+          "settings": {
+            "icon": "🎮",
+            "title": "Caffeinated Creativity",
+            "tagline": "Arcade nights, latte art battles, escape room teasers.",
+            "description": "From 8-bit mini games to immersive storytelling, we give fans reasons to keep returning—online and IRL."
+          }
+        },
+        "pillar-4": {
+          "type": "pillar",
+          "settings": {
+            "icon": "🤝",
+            "title": "House of Mischief",
+            "tagline": "Community-first, women-led, unapologetically bold.",
+            "description": "Pop-up collabs, inclusive hiring, and transparent sourcing keep our universe grounded in real relationships."
+          }
+        }
+      },
+      "block_order": ["pillar-1", "pillar-2", "pillar-3", "pillar-4"]
+    },
+    "showcase": {
+      "type": "product-showcase",
+      "settings": {},
+      "blocks": {
+        "showcase-1": {
+          "type": "feature",
+          "settings": {
+            "tag": "Flagship Roast",
+            "title": "Wake the FUCH Up! – Dark Roast",
+            "notes": "An unapologetic dark roast with dark chocolate, burnt sugar, and midnight cherry energy.",
+            "roast": "Dark",
+            "origin": "Guatemala + Sumatra",
+            "tasting": "Fudge brownie, molasses, smoky cola",
+            "cta_label": "Shop the roast",
+            "cta_link": "/products/wake-the-fuch-up"
+          }
+        },
+        "showcase-2": {
+          "type": "feature",
+          "settings": {
+            "tag": "Seasonal",
+            "title": "Moonbeam Matcha",
+            "notes": "Ceremonial-grade matcha, pandan coconut cream, and galaxy glitter—our cult-favorite green sip.",
+            "roast": "Light",
+            "origin": "Uji, Japan",
+            "tasting": "Pandan, toasted rice, vanilla bean",
+            "cta_label": "Order the syrup kit",
+            "cta_link": "/products/moonbeam-matcha-kit"
+          }
+        },
+        "showcase-3": {
+          "type": "feature",
+          "settings": {
+            "tag": "Drop Exclusive",
+            "title": "Chaos Chai",
+            "notes": "Temecula-roasted espresso, house masala concentrate, and smoked orange peel.",
+            "roast": "Medium",
+            "origin": "Temecula Coffee Roasters",
+            "tasting": "Cardamom, candied ginger, torched citrus",
+            "cta_label": "Preorder",
+            "cta_link": "/products/chaos-chai"
+          }
+        },
+        "showcase-4": {
+          "type": "feature",
+          "settings": {
+            "tag": "Ready-to-Drink",
+            "title": "Pixel Mint Nitro",
+            "notes": "Nitro-infused mint mocha that pours like velvet and tastes like victory.",
+            "roast": "Medium-Dark",
+            "origin": "Colombia",
+            "tasting": "Mint truffle, cacao nib, silky finish",
+            "cta_label": "Join the waitlist",
+            "cta_link": "/products/pixel-mint-nitro"
+          }
+        }
+      },
+      "block_order": ["showcase-1", "showcase-2", "showcase-3", "showcase-4"]
+    },
+    "menu": {
+      "type": "menu",
+      "settings": {
+        "copy": "Pair the right artwork with each drink below—swap in the matcha, chai, mocha, and dark roast illustrations we created so every tile is on-brand."
+      },
+      "blocks": {
+        "menu-1": {
+          "type": "item",
+          "settings": {
+            "title": "Wake the FUCH Up!",
+            "badge": "Dark Roast",
+            "description": "Signature private-label roast roasted by Temecula Coffee Roasters. Notes of cocoa nib, smoked caramel, midnight cherry.",
+            "price": "$18 / 12oz"
+          }
+        },
+        "menu-2": {
+          "type": "item",
+          "settings": {
+            "title": "Moonbeam Matcha",
+            "badge": "Glitter Latte",
+            "description": "Ceremonial matcha poured over pandan coconut cream with nebula sprinkles and neon straw.",
+            "price": "$7"
+          }
+        },
+        "menu-3": {
+          "type": "item",
+          "settings": {
+            "title": "Chaos Chai",
+            "badge": "Masala",
+            "description": "Smoked orange peel, cardamom syrup, and espresso for a spicy-sweet punch.",
+            "price": "$6.50"
+          }
+        },
+        "menu-4": {
+          "type": "item",
+          "settings": {
+            "title": "Pixel Mint Nitro",
+            "badge": "Nitro",
+            "description": "Nitro cold brew layered with mint cocoa cream—served in cans or on tap.",
+            "price": "$6"
+          }
+        }
+      },
+      "block_order": ["menu-1", "menu-2", "menu-3", "menu-4"]
+    },
+    "dropship": {
+      "type": "dropship-partners",
+      "settings": {},
+      "blocks": {
+        "partner-1": {
+          "type": "partner",
+          "settings": {
+            "title": "Temecula Coffee Roasters",
+            "badge": "Best for launch",
+            "summary": "No membership fees, low minimums, and white-label support that matches our punk branding goals.",
+            "highlight_one": "Private-label roasting with custom artwork placement",
+            "highlight_two": "Ships from California in 3–5 business days",
+            "highlight_three": "Offers label templates + compliance checklist",
+            "footer": "Ideal when we want full control of blends plus drop-in merch photography."
+          }
+        },
+        "partner-2": {
+          "type": "partner",
+          "settings": {
+            "title": "Dripshipper",
+            "badge": "Automation friendly",
+            "summary": "Shopify app with auto-fulfillment, ideal once we scale traffic and want a hands-off inventory flow.",
+            "highlight_one": "Subscription-based with real-time order routing",
+            "highlight_two": "US-roasted beans roasted to order",
+            "highlight_three": "Pairs well with Klaviyo + Recharge automations",
+            "footer": "Use after validating best-sellers—membership fees can be offset by bundling merch + beans."
+          }
+        },
+        "partner-3": {
+          "type": "partner",
+          "settings": {
+            "title": "Aroma Ridge",
+            "badge": "Flavor lab",
+            "summary": "Custom flavor development and small-batch flavored coffees to extend our seasonal calendar.",
+            "highlight_one": "One-time $100 onboarding",
+            "highlight_two": "Great for limited runs + collabs",
+            "highlight_three": "Bulk + dropship options for flexibility",
+            "footer": "Use for flavored coffee subscription drops and escape-room tie-ins."
+          }
+        }
+      },
+      "block_order": ["partner-1", "partner-2", "partner-3"]
+    },
+    "about": {
+      "type": "about",
+      "settings": {},
+      "blocks": {
+        "highlight-1": {
+          "type": "highlight",
+          "settings": {
+            "title": "Dropship Launch Lab",
+            "description": "Temecula fulfillment now, upgrade to Dripshipper automations when we hit 8k monthly visitors."
+          }
+        },
+        "highlight-2": {
+          "type": "highlight",
+          "settings": {
+            "title": "Caffeine + Chaos + Charm",
+            "description": "Merch capsules, bold drink art, and playlist drops that match every roast."
+          }
+        },
+        "highlight-3": {
+          "type": "highlight",
+          "settings": {
+            "title": "Escape Room Preview",
+            "description": "Prototype puzzles hidden in the café and online mini-games build hype for the future HQ."
+          }
+        }
+      },
+      "block_order": ["highlight-1", "highlight-2", "highlight-3"]
+    },
+    "testimonials": {
+      "type": "testimonials",
+      "settings": {},
+      "blocks": {
+        "testimonial-1": {
+          "type": "testimonial",
+          "settings": {
+            "quote": "Wake the FUCH Up! is my new touring fuel—tastes like dark chocolate rebellion.",
+            "author": "Nova — Nerdcore Vocalist"
+          }
+        },
+        "testimonial-2": {
+          "type": "testimonial",
+          "settings": {
+            "quote": "Finally a coffee brand that leans into punk humor AND nails label compliance. The Temecula partnership is chef's kiss.",
+            "author": "Maris Doty — Co-Founder"
+          }
+        },
+        "testimonial-3": {
+          "type": "testimonial",
+          "settings": {
+            "quote": "The 8-bit arcade and escape-room teasers make every visit feel like a quest. Pixel Mint Nitro forever!",
+            "author": "Jules — Game Designer"
+          }
+        }
+      },
+      "block_order": ["testimonial-1", "testimonial-2", "testimonial-3"]
+    },
+    "events": {
+      "type": "events",
+      "settings": {},
+      "blocks": {
+        "event-1": {
+          "type": "event",
+          "settings": {
+            "date": "First Fridays",
+            "title": "Wake the FUCH Up! Roast Drops",
+            "description": "New single-origin release, live DJ mashups, and tasting flights paired with limited merch."
+          }
+        },
+        "event-2": {
+          "type": "event",
+          "settings": {
+            "date": "Second Saturdays",
+            "title": "FUCH Arcade Beta Night",
+            "description": "Playtest the 8-bit mascot game IRL, snag achievement pins, and sip Pixel Mint Nitro on tap."
+          }
+        },
+        "event-3": {
+          "type": "event",
+          "settings": {
+            "date": "Quarterly",
+            "title": "Escape Room Sneak Peek",
+            "description": "Solve micro-puzzles hidden around the café to unlock discounts and future reservations."
+          }
+        }
+      },
+      "block_order": ["event-1", "event-2", "event-3"]
+    },
+    "arcade": {
+      "type": "fuch-arcade",
+      "settings": {}
+    }
+  },
+  "order": [
+    "hero",
+    "brand-pillars",
+    "showcase",
+    "menu",
+    "dropship",
+    "about",
+    "testimonials",
+    "events",
+    "arcade"
+  ]
+}

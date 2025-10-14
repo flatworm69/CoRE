@@ -1,0 +1,75 @@
+<section id="about" class="about" data-section-id="about" data-section-type="about">
+  <div class="container about__grid">
+    <div class="about__story">
+      <h2 class="section-title">{{ section.settings.heading }}</h2>
+      <div class="about__copy">{{ section.settings.paragraph_one }}</div>
+      <div class="about__copy">{{ section.settings.paragraph_two }}</div>
+      <a class="button button--ghost" href="{{ section.settings.button_link }}">{{ section.settings.button_label }}</a>
+    </div>
+    <div class="about__highlights" id="community">
+      {% if section.blocks.size > 0 %}
+        {% for block in section.blocks %}
+          <div class="about__card" {{ block.shopify_attributes }}>
+            <h3>{{ block.settings.title }}</h3>
+            <p>{{ block.settings.description }}</p>
+          </div>
+        {% endfor %}
+      {% else %}
+        <div class="about__card">
+          <h3>Share your story</h3>
+          <p>Add highlight blocks to tell guests what makes Feisty Unicorn Coffee House special.</p>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "About",
+  "settings": [
+    {"type": "text", "id": "heading", "label": "Heading", "default": "Why we built Feisty Unicorn Coffee"},
+    {"type": "richtext", "id": "paragraph_one", "label": "First paragraph", "default": "<p>Maris and the crew dreamed up Feisty Unicorn Coffee House as a hybrid café, merch lab, and future escape-room lobby. Our punk unicorn mascot keeps things cheeky while we serve meticulously sourced beans roasted through trusted partners like Temecula Coffee Roasters.</p>"},
+    {"type": "richtext", "id": "paragraph_two", "label": "Second paragraph", "default": "<p>We’re drop-ship first so we can launch fast, but every touchpoint is crafted—labels, playlists, AI-powered automations, even the <strong>Wake the FUCH Up!</strong> anthem. Expect collaborations, nerdcore nights, and the coziest creative nooks in the galaxy.</p>"},
+    {"type": "text", "id": "button_label", "label": "Button label", "default": "View the roadmap"},
+    {"type": "url", "id": "button_link", "label": "Button link", "default": "/pages/fuch-playbook"}
+  ],
+  "blocks": [
+    {
+      "type": "highlight",
+      "name": "Highlight",
+      "settings": [
+        {"type": "text", "id": "title", "label": "Title", "default": "Dropship Launch Lab"},
+        {"type": "textarea", "id": "description", "label": "Description", "default": "Temecula fulfillment now, upgrade to Dripshipper automations when we hit 8k monthly visitors."}
+      ]
+    },
+    {
+      "type": "highlight",
+      "name": "Highlight",
+      "settings": [
+        {"type": "text", "id": "title", "label": "Title", "default": "Caffeine + Chaos + Charm"},
+        {"type": "textarea", "id": "description", "label": "Description", "default": "Merch capsules, bold drink art, and playlist drops that match every roast."}
+      ]
+    },
+    {
+      "type": "highlight",
+      "name": "Highlight",
+      "settings": [
+        {"type": "text", "id": "title", "label": "Title", "default": "Escape Room Preview"},
+        {"type": "textarea", "id": "description", "label": "Description", "default": "Prototype puzzles hidden in the café and online mini-games build hype for the future HQ."}
+      ]
+    }
+  ],
+  "max_blocks": 6,
+  "presets": [
+    {
+      "name": "About",
+      "blocks": [
+        {"type": "highlight"},
+        {"type": "highlight"},
+        {"type": "highlight"}
+      ]
+    }
+  ]
+}
+{% endschema %}
