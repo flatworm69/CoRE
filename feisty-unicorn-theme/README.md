@@ -31,13 +31,14 @@ feisty-unicorn-theme/
 ## Getting Started
 
 1. Install the [Shopify CLI](https://shopify.dev/docs/themes/tools/cli) and authenticate with your store.
-2. From this theme directory, run:
+2. For a quick local preview, run:
    ```bash
    shopify theme serve
    ```
-   to develop locally with hot reloading.
-3. Customize section content, menu links, and theme settings in the Shopify editor after uploading or linking the theme.
-4. Upload the curated drink artwork (dark roast, matcha, chai, mocha/nitro) and map them to the Product showcase + Menu items.
+   from this theme directory.
+3. To share a live preview tunnel (desktop + mobile), follow the [Preview Guide](docs/preview-guide.md) and run `shopify theme dev --tunnel`.
+4. Customize section content, menu links, and theme settings in the Shopify editor after uploading or linking the theme.
+5. Upload the curated drink artwork (dark roast, matcha, chai, mocha/nitro) and map them to the Product showcase + Menu items.
 
 ## Artwork & Media Mapping
 
