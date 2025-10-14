@@ -1,0 +1,8 @@
+<form method="post" action="{{ routes.root_url }}" class="newsletter__form">
+  <input type="hidden" name="form_type" value="customer" />
+  <input type="hidden" name="contact[tags]" value="newsletter" />
+  <label class="visually-hidden" for="NewsletterEmailFooter">{{ 'newsletter.form.email_placeholder' | t }}</label>
+  <input id="NewsletterEmailFooter" class="newsletter__input" type="email" name="contact[email]" placeholder="{{ 'newsletter.form.email_placeholder' | t }}" required>
+  <button type="submit" class="button button--primary">{{ 'newsletter.form.submit' | t }}</button>
+</form>
+<p class="newsletter__hint">We send weekly dispatches full of latte art, live music lineups, and exclusive beans.</p>

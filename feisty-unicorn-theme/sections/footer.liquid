@@ -1,0 +1,77 @@
+<footer class="site-footer" id="visit">
+  <div class="container site-footer__grid">
+    <div class="site-footer__column">
+      <h2 class="site-footer__title">{{ section.settings.visit_heading }}</h2>
+      <p>{{ section.settings.address | newline_to_br }}</p>
+      <p><strong>{{ section.settings.hours_heading }}</strong><br>{{ section.settings.hours | newline_to_br }}</p>
+    </div>
+    <div class="site-footer__column">
+      <h2 class="site-footer__title">{{ section.settings.newsletter_heading }}</h2>
+      {% render 'newsletter-form' %}
+    </div>
+    <div class="site-footer__column">
+      <h2 class="site-footer__title">{{ section.settings.connect_heading }}</h2>
+      <ul class="social-links">
+        {% for block in section.blocks %}
+          <li {{ block.shopify_attributes }}><a href="{{ block.settings.url }}" target="_blank" rel="noopener">{{ block.settings.label }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+  {% if section.settings.distribution != blank %}
+    <div class="site-footer__compliance">
+      {{ section.settings.distribution | newline_to_br }}
+    </div>
+  {% endif %}
+  {% if section.settings.compliance_note != blank %}
+    <div class="site-footer__compliance">{{ section.settings.compliance_note }}</div>
+  {% endif %}
+  <div class="site-footer__bottom">
+    <p>&copy; {{ 'now' | date: '%Y' }} {{ section.settings.copyright }}</p>
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "Footer",
+  "settings": [
+    {"type": "text", "id": "visit_heading", "label": "Visit heading", "default": "Visit"},
+    {"type": "textarea", "id": "address", "label": "Address", "default": "Future HQ: 123 Sparkle Street\nRainbow City, CA"},
+    {"type": "text", "id": "hours_heading", "label": "Hours heading", "default": "Hours"},
+    {"type": "textarea", "id": "hours", "label": "Hours", "default": "Mon–Thu: 7a–6p\nFri: 7a–10p\nSat–Sun: 8a–5p"},
+    {"type": "text", "id": "newsletter_heading", "label": "Newsletter heading", "default": "Get the Chaos Report"},
+    {"type": "text", "id": "connect_heading", "label": "Connect heading", "default": "Follow the Unicorn"},
+    {"type": "textarea", "id": "distribution", "label": "Distribution block", "default": "Roasted by Temecula Coffee Roasters, Temecula, CA\nDistributed by Feisty Unicorn Coffee House, LLC"},
+    {"type": "richtext", "id": "compliance_note", "label": "Compliance note", "default": "<p>Label callouts: Whole Bean • Net Wt 12 oz (340 g) • Crafted for the <em>Wake the FUCH Up!</em> series.</p>"},
+    {"type": "text", "id": "copyright", "label": "Copyright text", "default": "Feisty Unicorn Coffee House. Caffeine + Chaos + Charm."}
+  ],
+  "blocks": [
+    {
+      "type": "social",
+      "name": "Social link",
+      "settings": [
+        {"type": "text", "id": "label", "label": "Label", "default": "Instagram"},
+        {"type": "url", "id": "url", "label": "URL", "default": "https://instagram.com/getfuchd"}
+      ]
+    },
+    {
+      "type": "social",
+      "name": "Social link",
+      "settings": [
+        {"type": "text", "id": "label", "label": "Label", "default": "TikTok"},
+        {"type": "url", "id": "url", "label": "URL", "default": "https://tiktok.com/@feistyunicorncoffee"}
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Footer",
+      "blocks": [
+        {"type": "social"},
+        {"type": "social"},
+        {"type": "social"}
+      ]
+    }
+  ]
+}
+{% endschema %}

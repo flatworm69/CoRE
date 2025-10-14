@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ page_title | default: "Feisty Unicorn Coffee House" }}</title>
+    <meta name="description" content="Feisty Unicorn Coffee House – artisan roastery, whimsical drinks, and a vibrant community hub." />
+    {{ 'theme.css' | asset_url | stylesheet_tag }}
+    {{ 'https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700&family=Playfair+Display:wght@600;700&display=swap' | stylesheet_tag }}
+    {{ content_for_header }}
+  </head>
+  <body class="template-{{ template | replace: '.', '-' }}">
+    {% section 'header' %}
+    <main id="MainContent" role="main">
+      {{ content_for_layout }}
+    </main>
+    {% section 'footer' %}
+    {{ 'theme.js' | asset_url | script_tag }}
+    {{ content_for_footer }}
+  </body>
+</html>

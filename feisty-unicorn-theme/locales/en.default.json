@@ -1,0 +1,14 @@
+{
+  "general": {
+    "404": {
+      "title": "Page not found",
+      "subtext": "Looks like this page trotted off. Return home to keep exploring the Feisty Unicorn realm."
+    }
+  },
+  "newsletter": {
+    "form": {
+      "email_placeholder": "Get the latest sips & events",
+      "submit": "Subscribe"
+    }
+  }
+}

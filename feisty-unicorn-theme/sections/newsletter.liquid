@@ -1,0 +1,18 @@
+<section class="newsletter" aria-label="Newsletter signup">
+  <div class="container">
+    <h2 class="section-title">{{ section.settings.heading }}</h2>
+    {% render 'newsletter-form' %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Newsletter",
+  "settings": [
+    {"type": "text", "id": "heading", "label": "Heading", "default": "Stay in the Loop"}
+  ],
+  "presets": [
+    {"name": "Newsletter"}
+  ]
+}
+{% endschema %}
